@@ -1,3 +1,5 @@
+import scala.annotation.tailrec
+
 class Sorting {
 
   //Implementation of bubble sort
