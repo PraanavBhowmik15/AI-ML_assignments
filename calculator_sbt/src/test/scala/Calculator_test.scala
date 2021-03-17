@@ -6,6 +6,7 @@ class Calculator_test extends AnyFlatSpec {
   val b=20
   val c=5
   val d=2
+  val error=0
   "The sum" should " is write" in {
     val sum=new Calculator()
     val s=sum.addition(a,b)
@@ -31,6 +32,12 @@ class Calculator_test extends AnyFlatSpec {
     val div=new Calculator()
     val s=div.division(b,a)
     val expectedResult = 2
+    assert(s === expectedResult)
+  }
+  "The division is" should "not valid" in {
+    val div=new Calculator()
+    val s=div.division(b,error)
+    val expectedResult = "Denominator can not be 0"
     assert(s === expectedResult)
   }
 
@@ -61,10 +68,22 @@ class Calculator_test extends AnyFlatSpec {
     val expectedResult = 20
     assert(s === expectedResult)
   }
+  "Maximum is" should " also write" in {
+    val max=new Calculator()
+    val s=max.maximum(b,a)
+    val expectedResult = 20
+    assert(s === expectedResult)
+  }
 
   "The Minimum" should " is write" in {
     val min=new Calculator()
     val s=min.minimum(a,b)
+    val expectedResult = 10
+    assert(s === expectedResult)
+  }
+  "The Minimum is" should " also write" in {
+    val min=new Calculator()
+    val s=min.minimum(b,a)
     val expectedResult = 10
     assert(s === expectedResult)
   }

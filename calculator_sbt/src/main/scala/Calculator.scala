@@ -12,9 +12,11 @@ class Calculator  {
   def multiplication(number_1 : Int , number_2 : Int) : Int = number_1 * number_2
 
   // Division Method
-  def division (number_1 : Int , number_2 : Int) : Int = {
-    require(number_2 != 0, "Denominator can not be 0")
+  def division (number_1 : Int , number_2 : Int) : Any = {
+    if (number_2 > 0)
     number_1 / number_2
+    else
+      "Denominator can not be 0"
   }
 
   // power method for calculating power of a number
